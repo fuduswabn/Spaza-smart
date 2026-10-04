@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpazaSmart Customer Presentation</title>
+  <style>
+    :root {
+      --blue: #2E86DE;
+      --dark: #123047;
+      --muted: #5F6F7A;
+      --green: #22B573;
+      --red: #E44D5E;
+      --bg: #F5F8FB;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--dark);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .deck {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .slide {
+      width: 100%;
+      min-height: 675px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: 0 18px 45px rgba(18, 48, 71, 0.12);
+      margin: 0 0 32px;
+      padding: 56px;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -120px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(46, 134, 222, 0.12);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 24px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: 64px;
+      line-height: 1.02;
+      margin: 0 0 22px;
+      letter-spacing: -1.5px;
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 0 0 28px;
+      letter-spacing: -0.8px;
+    }
+
+    p {
+      font-size: 25px;
+      line-height: 1.45;
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .price {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      font-size: 44px;
+      font-weight: 900;
+      border-radius: 24px;
+      padding: 18px 28px;
+      margin-top: 18px;
+      width: fit-content;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      background: #F8FBFF;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .card h3 {
+      font-size: 28px;
+      margin: 0 0 10px;
+      color: var(--dark);
+    }
+
+    .card p {
+      font-size: 21px;
+      margin: 0;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 18px;
+      margin-top: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: #F8FBFF;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px 24px;
+      font-size: 24px;
+      color: var(--dark);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .highlight {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .success {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .footer {
+      margin-top: 36px;
+      font-size: 20px;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta {
+      background: var(--dark);
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.86);
+      font-size: 24px;
+      margin: 0;
+    }
+
+    @media print {
+      body { background: white; }
+      .deck { padding: 0; max-width: none; }
+      .slide {
+        border-radius: 0;
+        box-shadow: none;
+        border: 0;
+        min-height: 100vh;
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .deck { padding: 12px; }
+      .slide { min-height: 640px; padding: 30px; border-radius: 22px; }
+      h1 { font-size: 42px; }
+      h2 { font-size: 34px; }
+      p { font-size: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      .card h3 { font-size: 23px; }
+      .card p, .step { font-size: 18px; }
+      .price { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide">
+      <div class="brand">SpazaSmart</div>
+      <h1>Run your shop from your phone</h1>
+      <p>A simple app for spaza shops and small businesses to manage products, sales, customers, debts, and customer purchases.</p>
+      <div class="price">Only R200 once-off</div>
+      <div class="footer">Web app friendly. Works on phone browser and mobile app flow.</div>
+    </section>
+
+    <section class="slide">
+      <div class="brand">What problem it solves</div>
+      <h2>No more lost papers, forgotten debts, or confused customers</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Track stock</h3>
+          <p>See products, prices, stock levels, and low-stock warnings.</p>
+        </div>
+        <div class="card">
+          <h3>Record sales</h3>
+          <p>Add products to cart and save real sales history.</p>
+        </div>
+        <div class="card">
+          <h3>Manage debts</h3>
+          <p>Allocate debt only to registered customers linked to your shop.</p>
+        </div>
+        <div class="card">
+          <h3>Customer accounts</h3>
+          <p>Customers can see what they bought and what they owe.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brand">What shop owners get</div>
+      <h2>Everything included for R200</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Shop owner dashboard</h3>
+          <p>Products, stores, sales, debts, and customer invites.</p>
+        </div>
+        <div class="card">
+          <h3>Invite codes</h3>
+          <p>Create a code for each customer so they join the correct shop.</p>
+        </div>
+        <div class="card">
+          <h3>Debt protection</h3>
+          <p>Debt can only be added to customers who joined your shop.</p>
+        </div>
+        <div class="card">
+          <h3>Location support</h3>
+          <p>Customers can find your shop and open directions on their device.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brand">How customers use it</div>
+      <h2>Simple customer signup with invite code</h2>
+      <div class="steps">
+        <div class="step">Shop owner creates and shares a customer invite code.</div>
+        <div class="step">Customer signs up using their name, phone, email, and invite code.</div>
+        <div class="step">Customer is linked to the correct shop automatically.</div>
+        <div class="step">Customer dashboard shows purchases and debts from that shop.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brand">Payment and approval</div>
+      <h2>Controlled access for shop owners</h2>
+      <div class="steps">
+        <div class="step">Shop owner registers with shop address or GPS location.</div>
+        <div class="step">Shop owner pays <span class="highlight">R200 once-off</span> by EFT.</div>
+        <div class="step">They tap “I’ve Paid R200” and send proof on WhatsApp.</div>
+        <div class="step">Admin checks proof and approves the account.</div>
+      </div>
+      <div class="cta">
+        <p><strong>Result:</strong> approved shop owners can use the full system. Customers stay connected to the correct shop with invite codes.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brand">Why choose SpazaSmart</div>
+      <h2>Built for local small shops</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Easy to understand</h3>
+          <p>Designed for everyday shop use, not complicated accounting.</p>
+        </div>
+        <div class="card">
+          <h3>Real customer records</h3>
+          <p>Customers are linked by invite code, reducing mistakes.</p>
+        </div>
+        <div class="card">
+          <h3>Better debt control</h3>
+          <p>Owners can search registered customers before allocating debt.</p>
+        </div>
+        <div class="card">
+          <h3>Mobile and web ready</h3>
+          <p>Presentation and app flow are designed to work cleanly on mobile and web.</p>
+        </div>
+      </div>
+      <div class="footer"><span class="success">Get started:</span> Register, pay R200, send proof, and wait for admin approval.</div>
+    </section>
+  </main>
+</body>
+</html>

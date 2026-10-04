@@ -1,0 +1,37 @@
+SpazaSmart customer presentation
+
+Slide 1: Run your shop from your phone
+A simple app for spaza shops and small businesses to manage products, sales, customers, debts, and customer purchases.
+Only R200 once-off.
+
+Slide 2: What problem it solves
+No more lost papers, forgotten debts, or confused customers.
+- Track stock
+- Record sales
+- Manage debts
+- Customer accounts
+
+Slide 3: What shop owners get
+Everything included for R200:
+- Shop owner dashboard
+- Invite codes
+- Debt protection
+- Location support
+
+Slide 4: How customers use it
+1. Shop owner creates and shares customer invite code.
+2. Customer signs up using name, phone, email, and invite code.
+3. Customer is linked to the correct shop automatically.
+4. Customer dashboard shows purchases and debts from that shop.
+
+Slide 5: Payment and approval
+1. Shop owner registers with shop address or GPS location.
+2. Shop owner pays R200 once-off by EFT.
+3. They tap “I’ve Paid R200” and send proof on WhatsApp.
+4. Admin checks proof and approves the account.
+
+Slide 6: Why choose SpazaSmart
+- Easy to understand
+- Real customer records
+- Better debt control
+- Mobile and web ready
